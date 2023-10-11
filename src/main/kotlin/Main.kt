@@ -1,14 +1,16 @@
 fun main() {
     val likes = 100
-    var textPrint :String
+    var textPrint: String
 
-    for (i in 1..likes){
-        if (i == 1 || (i in 5..21)) {
-            textPrint = "$i человек"
-        } else if ((i-2) % 10 == 0 || (i-3) % 10 == 0 || (i-4) % 10 == 0) {
-            textPrint = "$i человека"
+    for (i in 1..likes) {
+        textPrint = if (i in 5..20) {
+            "Понравилось $i человекам"
+        } else if (i == 1 || (i - 11) % 10 == 0) {
+            "Понравилось $i человеку"
+        } else if ((i - 12) % 10 == 0 || (i - 13) % 10 == 0 || (i - 14) % 10 == 0) {
+            "Понравилось $i людям"
         } else {
-            textPrint = "$i человек"
+            "Понравилось $i человекам"
         }
         println(textPrint)
     }
